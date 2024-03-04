@@ -5,13 +5,13 @@ import matplotlib
 import matplotlib.pyplot as plt
 from PIL import Image
 
-geoloc_df = pd.read_csv("geolocation_dataset.csv")
-order_payments_df = pd.read_csv("order_payments_dataset.csv")
-order_item_df = pd.read_csv("order_items_dataset.csv")
-orders_df = pd.read_csv("orders_dataset.csv")
-product_df = pd.read_csv("products_dataset.csv")
-product_category_df = pd.read_csv("product_category_name_translation.csv")
-customer_df = pd.read_csv("customers_dataset.csv")
+geoloc_df = pd.read_csv("Dashboard/geolocation_dataset.csv")
+order_payments_df = pd.read_csv("Dashboard/order_payments_dataset.csv")
+order_item_df = pd.read_csv("Dashboard/order_items_dataset.csv")
+orders_df = pd.read_csv("Dashboard/orders_dataset.csv")
+product_df = pd.read_csv("Dashboard/products_dataset.csv")
+product_category_df = pd.read_csv("Dashboard/product_category_name_translation.csv")
+customer_df = pd.read_csv("Dashboard/customers_dataset.csv")
 
 product_df.dropna(axis=0, inplace=True)
 orders_df['order_approved_at'].fillna(method='ffill', inplace=True)
@@ -92,7 +92,7 @@ st.pyplot(plt)
 
 
 st.subheader("Clustering customer's behavior based on price and payment value")
-image_path = "Clustering-1.jpeg"
+image_path = "Clustering/Clustering-1.jpeg"
 image_file = Image.open(image_path)
 st.image(image_file, caption='Clustering graph', use_column_width=True)
 
